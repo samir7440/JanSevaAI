@@ -141,8 +141,9 @@ const DEMO_DEPARTMENTS = [
  * http://localhost:9090
  */
 
-const API_BASE = "http://localhost:9090/api";
 
+//const API_BASE = `${process.env.REACT_APP_API_URL || "http://localhost:9090"}/api`;
+const API_BASE = `${process.env.REACT_APP_API_URL || "https://janseva-backend-2187.onrender.com"}/api`;
 const API = {
   complaints: `${API_BASE}/admin/all`,
   stats: `${API_BASE}/admin/stats`

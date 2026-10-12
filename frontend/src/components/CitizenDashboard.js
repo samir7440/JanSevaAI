@@ -129,7 +129,8 @@ const CitizenDashboard = () => {
 
     useEffect(() => {
 
-        axios.get('/api/categories')
+       // axios.get('/api/categories')
+       axios.get(`${process.env.REACT_APP_API_URL || "https://janseva-backend-2187.onrender.com"}/api/categories`)
 
             .then((res) => {
 
@@ -259,10 +260,7 @@ const CitizenDashboard = () => {
 
                 try {
 
-                    await axios.post(
-                        '/api/complaint',
-                        c
-                    );
+                    await axios.post(`${process.env.REACT_APP_API_URL || "https://janseva-backend-2187.onrender.com"}/api/complaint`, c);
 
                 }
 
@@ -496,7 +494,8 @@ const CitizenDashboard = () => {
             const response =
                 await axios.post(
 
-                    'http://127.0.0.1:8000/classify',
+                   // 'http://127.0.0.1:8000/classify',
+                   `${process.env.REACT_APP_AI_API_URL || "https://jansevaai.onrender.com"}/classify`,
 
                     {
 
@@ -886,13 +885,7 @@ const CitizenDashboard = () => {
 
         try {
 
-            await axios.post(
-
-                '/api/complaint',
-
-                complaintData
-
-            );
+            await axios.post(`${process.env.REACT_APP_API_URL || "https://janseva-backend-2187.onrender.com"}/api/complaint`, complaintData);
 
 
             alert(
@@ -957,13 +950,7 @@ const CitizenDashboard = () => {
 
         try {
 
-            const response =
-                await axios.get(
-
-                    `/api/track/${trackingMobile}`
-
-                );
-
+            const response = await axios.get(`${process.env.REACT_APP_API_URL || "https://janseva-backend-2187.onrender.com"}/api/track/${trackingMobile}`);
 
             setTrackingData(
 
